@@ -1,0 +1,374 @@
+@mixin title{
+  color: #222222;
+  font-size: 40px;
+  text-transform: uppercase;
+  padding-top: 120px;
+}
+@mixin text{
+  color: #777777;
+  font-family: "Droid Serif";
+  font-size: 16px;
+  font-style: italic;
+  padding-top: 19px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 400 14px / 1.2em Montserrat, Arial , sans-serif;
+  color: #777777;
+  margin: 0;
+}
+.row::before, 
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// Grid
+
+.container {
+  max-width: 933px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+[class*='col-'] {
+  float: left;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+// Header
+
+.page-header {
+  background-image: url(../images/Background_Image.png);
+  background-size: no-repeat;
+  height: 700px;
+}
+.page-header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand img {
+  padding-top: 44px;
+}
+
+// Menu
+
+.menu {
+  padding-top: 44px;
+  margin: 0;
+    &__item {
+      display: inline-block;
+      padding: 0 15px;
+    }
+    &__link {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+}
+
+// Slogan
+
+.header-slogan {
+  text-align: center;
+  padding-top: 210px;
+  & p {
+    font-size: 40px;
+    font-family: "Droid Serif";
+    font-style: italic;
+    color: #ffffff;
+  }
+  & h1 {
+    color: #ffffff;
+    font-size: 75px;
+    text-transform: uppercase;
+    padding-top: 52px;
+  }
+}
+
+// Intro-cta
+
+.intro-cta {
+  text-align: center;
+  padding-top: 58px;
+    &__button {
+      cursor: pointer;
+      width: 242px;
+      height: 68px;
+      background-color: #fed136;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 5%;
+      border: none;
+        &:hover {
+          transition: 1s;
+          opacity: 0.7;
+          color: fff;
+        }
+    }
+}
+
+// section Service
+
+.service {
+    max-height: 700px;
+  & h2 {
+    @include title;
+  }
+  & p {
+    @include text;
+  }
+  &__item {
+    padding-top: 80px;
+    padding-bottom: 120px;
+      & p {
+        color: #777777;
+        font-family: "Roboto Slab";
+        font-size: 14px;
+      }
+  }
+  &__icon {
+    border: 3px solid #fed136;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #fed136;
+    font-size: 3em;
+    padding: 10px;
+  }
+  &__link {
+    text-decoration: none;
+      & h4 {
+        color: #222222;
+        font-size: 18px;
+      }
+  }
+}
+
+// section Portfolio
+
+.portfolio {
+    background-color: #f7f7f7;
+  & h2 {
+    @include title;
+  }
+  & p {
+    @include text;
+  }
+  &__row1 {
+    padding-top: 74px;
+  }
+  &__row2 {
+    padding-top: 49px;
+    padding-bottom: 120px;
+  }
+  &__item {
+    & h5 {
+      color: #333333;
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+    & p {
+      padding-top: 4px;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+  }
+}
+
+// section About Us
+
+.about {
+  & h2 {
+    @include title;
+  }
+  & p {
+    @include text;
+  }
+  &__textleft {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 300px;
+    text-align: right;
+  }
+  &__textright {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 300px;
+    text-align: left;
+  }
+  &__item {
+    position: relative;
+      & h3 {
+        color: #222222;
+        font-family: Montserrat;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+      & b {
+        color: #222222;
+      }
+      &__last {
+        position: relative;
+        margin-bottom: 120px;
+          &__text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding: 42px 34px 36px 31px;
+          }
+      }
+  }
+}
+
+// section Team
+
+.team {
+  background-color: #f9f9f9;
+  & h2 {
+    @include title;
+  }
+  & p {
+    @include text;
+  }
+  &__item {
+    padding-top: 82px;
+    & h5 {
+      color: #222222;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    & p {
+      color: #777777;
+      font-family: "Roboto Slab";
+      font-size: 14px;
+      padding: 0;
+    }
+  }
+  &__icons {
+    color: #222222;
+    & img {
+      font-size: 1.3em;
+      padding: 0 8px;
+     }
+  }
+  &__text {
+    margin: 49px auto;
+    color: #777777;
+    font-family: "Roboto Slab";
+    font-size: 16px;
+    max-width: 600px;
+    padding-bottom: 120px;
+  }
+}
+
+// section Logos
+
+.logos {
+  margin: 60px;
+  &__items {
+    max-width: 756px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+// section Contact-us
+
+.contact {
+  background-image: url(../images/contact-us.png);
+  color: #ffffff;
+  max-height: 680px;
+  position: relative;
+  & h2 {
+    @include title;
+    color: #ffffff;
+  }
+  & p {
+    @include text;
+    margin-bottom: 70px;
+  }
+  & input {
+    width: 100%;
+    height: 50px;
+  }
+  & textarea {
+    width: 100%;
+    height: 210px;
+  }
+  &__map {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+  }
+  &__form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 230px;
+  }
+  &__btn {
+    cursor: pointer;
+    margin: 30px 0 120px;
+    width: 242px;
+    height: 68px;
+    background-color: #fed136;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5%;
+    border: none;
+      &:hover {
+        transition: 1s;
+        opacity: 0.7;
+        color: fff;
+      }
+  }
+}
+
+// footer
+
+.footer {
+  margin-top: 30px;
+  &__text {
+    padding-top: 20px;
+    color: #555555;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  &__icons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
